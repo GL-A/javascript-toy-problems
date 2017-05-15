@@ -907,3 +907,810 @@ function select(arr, obj) {
   })
   return newObj;
 }
+
+// Write a function called "getElementsLessThan100AtProperty".
+// Given an object and a key, "getElementsLessThan100AtProperty"
+// returns an array containing all the elements of the array
+// located at the given key that are less than 100.
+function getElementsLessThan100AtProperty(obj, key) {
+  // your code here
+  if(!Array.isArray(obj[key])){
+    return [];
+  }
+  var arr100 = obj[key].filter(num => {
+    return num < 100;
+  })
+  return arr100;
+}
+
+// Write a function called "countAllCharacters".
+// Given a string, "countAllCharacters" returns
+// an object where each key is a character in the
+// given string. The value of each key should be
+// how many times each character appeared in the given string.
+function countAllCharacters(str) {
+  // your code here
+  let newObj = {};
+  str = str.split('');
+  str.forEach(letter => {
+    if( newObj.hasOwnProperty(letter) ) {
+      newObj[letter] ++;
+    } else {
+      newObj[letter] = 1;
+    }
+  })
+  return newObj;
+}
+
+// Write a function called "getElementsGreaterThan10AtProperty".
+// Given an object and a key, "getElementsGreaterThan10AtProperty"
+// returns an array containing the elements within the array,
+// located at the given key, that are greater than 10.
+function getElementsGreaterThan10AtProperty(obj, key) {
+  // your code here
+  if( !Array.isArray(obj[key]) ) {
+    return [];
+  }
+  var arr10 = obj[key].filter(num => {
+    return num > 10;
+  });
+  return arr10;
+}
+
+// Write a function called "removeElement".
+// Given an array of elements, and a "discarder"
+// parameter, "removeElement" returns an array containing
+// the items in the given array that do not match the "discarder" parameter.
+function removeElement(array, discarder) {
+  // your code here
+  array = array.filter(num => {
+    return num !== discarder;
+  })
+  return array;
+}
+
+// Write a function called "getFirstElementOfProperty".
+// Given an object and a key, "getFirstElementOfProperty"
+// returns the first element of the array located at the given key.
+function getFirstElementOfProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return undefined;
+  }
+  return obj[key][0];
+}
+
+// Write a function called "getNthElementOfProperty".
+// Given an object and a key, "getNthElementOfProperty"
+// returns the nth element of an array located at the given key.
+function getNthElementOfProperty(obj, key, n) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return undefined;
+  }
+  return obj[key][n];
+}
+
+// Write a function called "getLastElementOfProperty".
+// Given an object and a key, "getLastElementOfProperty"
+// returns the last element of an array located at the given key.
+function getLastElementOfProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return undefined;
+  }
+  return obj[key][obj[key].length - 1];
+}
+
+// Write a function called "keep".
+// Given an array and a keeper element,
+// "keep" returns an array containing
+// the items that match the given keeper element.
+function keep(array, keeper) {
+  // your code here
+  return array.filter(num => {
+    return num === keeper;
+  })
+}
+
+// Write a function called "getOddLengthWordsAtProperty".
+// Given an object and a key, "getOddLengthWordsAtProperty"
+// returns an array containing all the odd length word elements
+// of the array located at the given key.
+function getOddLengthWordsAtProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return [];
+  }
+  let oddArr = obj[key].filter(word => {
+    return word.length % 2 === 1;
+  })
+  return oddArr;
+}
+
+// Write a function called "computeAverageOfNumbers".
+// Given an array of numbers, "computeAverageOfNumbers"
+// returns their average.
+function computeAverageOfNumbers(nums) {
+  // your code here
+  if ( !Array.isArray( nums ) || nums.length === 0 ) {
+    return 0;
+  }
+  return nums.reduce((a,b) => a + b) / nums.length;
+}
+
+// Write a function called "getAverageOfElementsAtProperty".
+// Given an object and a key, "getAverageOfElementsAtProperty"
+// returns the average of all the elements in the array
+// located at the given key.
+function getAverageOfElementsAtProperty(obj, key) {
+  // your code here
+  if ( !Array.isArray( obj[key] ) || obj[key].length === 0 ) {
+    return 0;
+  }
+  return obj[key].reduce( ( a,b ) => a + b ) / obj[key].length;
+}
+
+// Write a function called "getEvenLengthWordsAtProperty".
+// Given an object and a key, "getEvenLengthWordsAtProperty"
+// returns an array containing all the even length word elements
+// of the array located at the given key.
+function getEvenLengthWordsAtProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return [];
+  }
+  let arr = obj[key];
+  return arr.filter(word => {
+    return word.length % 2 === 0;
+  })
+}
+
+// Write a function called "filterOddLengthWords".
+// Given an array of string, "filterOddLengthWords"
+// returns an array containing only the elements of
+// the given array whose lengths are odd numbers.
+function filterOddLengthWords(words) {
+  // your code here
+  return words.filter( word => {
+    return word.length % 2 === 1;
+  })
+}
+
+// Write a function called "getSquaredElementsAtProperty".
+// Given an object and a key, "getSquaredElementsAtProperty"
+// returns an array containing all the squared elements
+// of the array located at the given key.
+function getSquaredElementsAtProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return [];
+  }
+  return obj[key].map( num => {
+    return num * num;
+  })
+}
+
+// Write a function called "getOddElementsAtProperty".
+// Given an object and a key, "getOddElementsAtProperty"
+// returns an array containing all the odd elements of
+// the array located at the given key.
+function getOddElementsAtProperty(obj, key) {
+  // your code here
+  if ( !Array.isArray( obj[key] ) ) {
+    return [];
+  }
+  let oddArr = obj[key];
+  return oddArr.filter( num => {
+    return num % 2 === 1;
+  })
+}
+
+// Write a function called "getEvenElementsAtProperty".
+// Given an object and a key, "getEvenElementsAtProperty"
+// returns an array containing all the even elements of
+// the array located at the given key.
+function getEvenElementsAtProperty(obj, key) {
+  // your code here
+  if ( !Array.isArray( obj[key] ) ) {
+    return [];
+  }
+  let evenArr = obj[key];
+  return evenArr.filter( num => {
+    return num % 2 === 0;
+  })
+}
+
+// Write a function called "filterEvenLengthWords".
+// Given an array of strings, "filterEvenLengthWords"
+// returns an array containing only the elements of
+// the given array whose length is an even number.
+function filterEvenLengthWords(words) {
+  // your code here
+  return words.filter( word => {
+    return word.length % 2 === 0;
+  })
+}
+
+// Write a function called "getLengthOfLongestElement".
+// Given an array, "getLengthOfLongestElement" returns
+// the length of the longest string in the given array.
+function getLengthOfLongestElement(arr) {
+  // your code here
+  let longestElem = 0;
+  arr.forEach( e => {
+    if ( e.length > longestElem ) {
+      longestElem = e.length;
+    }
+  })
+  return longestElem;
+}
+
+// Write a function called "getSmallestElementAtProperty".
+// Given an object and a key, "getSmallestElementAtProperty"
+// returns the smallest element in the array located at the given key.
+function getSmallestElementAtProperty(obj, key) {
+  // your code here
+  if ( !Array.isArray( obj[key] ) ) {
+    return undefined;
+  }
+  let smallest = obj[key][0];
+  obj[key].forEach( e => {
+    if ( e < smallest ) {
+      smallest = e;
+    }
+  })
+  return smallest;
+}
+
+// Write a function called "getLargestElementAtProperty".
+// Given an object and a key, "getLargestElementAtProperty"
+// returns the largest element in the array located at the given key.
+function getLargestElementAtProperty(obj, key) {
+  // your code here
+  if ( !Array.isArray( obj[key] ) ) {
+    return undefined;
+  }
+  let largest = obj[key][0];
+  obj[key].forEach( e => {
+    if( largest < e ) {
+      largest = e;
+    }
+  })
+  return largest;
+}
+
+// Write a function called "getAllButLastElementOfProperty".
+// Given an object and a key, "getAllButLastElementOfProperty"
+// returns an array containing all but the last element
+// of the array located at the given key.
+function getAllButLastElementOfProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) ) {
+    return [];
+  }
+  obj[key].pop();
+  return obj[key];
+}
+
+// Write a function called "getElementOfArrayProperty".
+// Given an object, a key, and a numerical index,
+// "getElementOfArrayProperty" returns the value of the
+// element at the given index of the array located
+// within the given object at the given key.
+function getElementOfArrayProperty(obj, key, index) {
+  // your code here
+  if ( !Array.isArray( obj[key] ) ) {
+    return undefined;
+  }
+  return obj[key][index];
+}
+
+// Write a function called "squareElements".
+// Given a array of numbers, "squareElements"
+// should return a new array where each element
+// is the square of the element of the given array.
+function squareElements(arr) {
+  // your code here
+  return arr.map( e => {
+    return e * e;
+  })
+}
+
+// Write a function called "filterOddElements".
+// Given an array of numbers, "filterOddElements"
+// returns an array containing only the odd
+// numbers of the given array.
+function filterOddElements(arr) {
+  // your code here
+  return arr.filter( e => {
+    return e % 2 === 1;
+  })
+}
+
+// Write a function called "computeProductOfAllElements".
+// Given an array of numbers, "computeProductOfAllElements"
+// returns the products of all the elements in the given array.
+function computeProductOfAllElements(arr) {
+  // your code here
+  if ( arr.length === 0 ) {
+    return 0;
+  }
+  return arr.reduce( (a,b) => {
+    return a * b;
+  })
+}
+
+// Write a function called "filterEvenElements".
+// Given an array of numbers, "filterEvenElements"
+// returns an array containing only the even numbers of the given array.
+function filterEvenElements(arr) {
+  // your code here
+  return arr.filter( e => {
+    return e % 2 === 0;
+  })
+}
+
+// Write a function called "getLengthOfShortestElement".
+// Given an array, "getLengthOfShortestElement" returns
+// the length of the shortest string in the given array.
+
+function getLengthOfShortestElement(arr) {
+  // your code here
+  if ( arr.length === 0 ) {
+    return 0;
+  }
+  let shortest = arr[0].length;
+  arr.forEach( e => {
+    if ( e.length < shortest ) {
+      shortest = e.length;
+    }
+  })
+  return shortest;
+}
+
+// Write a function called "getLongestElement".
+// Given an array, "getLongestElement" returns
+// the longest string in the given array.
+function getLongestElement(arr) {
+  // your code here
+  let longestStr = arr.sort( (a,b) => {
+    return b.length - a.length;
+  })[0];
+  return longestStr;
+}
+
+// Write a function called "findSmallestElement".
+// Given an array of numbers, "findSmallestElement"
+// returns the smallest number within the given array.
+function findSmallestElement(arr) {
+  // your code here
+  let smallest = arr.sort( (a,b) => {
+    return a - b;
+  })[0];
+  return smallest;
+}
+
+// Write a function called "findShortestElement".
+// Given an array, "findShortestElement" returns
+// the shortest string within the given array.
+function findShortestElement(arr) {
+  // your code here
+  let shortest = arr.sort( (a,b) => {
+    return a.length - b.length
+  })[0];
+  return shortest;
+}
+
+// Write a function called "getLargestElement".
+// Given an array, "getLargestElement" returns
+// the largest number in the given array.
+function getLargestElement(arr) {
+  // your code here
+  let largest = arr.sort( (a,b) => {
+    return b - a;
+  })[0];
+  return largest;
+}
+
+// Write a function called "computeSumOfAllElements".
+// Given an array of numbers, "computeSumOfAllElements"
+// returns the sum of all the elements in the given array.
+function computeSumOfAllElements(arr) {
+  // your code here
+  return arr.length === 0 ? 0 : arr.reduce( (a,b) => a +b );
+}
+
+// Write a function called "calculateBillTotal".
+// Given the pre tax and pre tip amount of a meal,
+// "calculateBillTotal" returns the total amount
+// due after tax and tip.
+function calculateBillTotal(preTaxAndTipAmount) {
+  // your code here
+  let tax = preTaxAndTipAmount * 0.095;
+  let tip = preTaxAndTipAmount * 0.15
+  return preTaxAndTipAmount + tax + tip;
+}
+
+// Write a function called "getStringLength".
+// Given a string, "getStringLength" returns
+// the length of the given string.
+function getStringLength(string) {
+  // your code here
+  let strLength = 0;
+  while ( string ) {
+    string = string.slice(1);
+    strLength ++;
+  }
+  return strLength;
+}
+
+// Write a function called "joinArrayOfArrays".
+// Given an array of arrays, "joinArrayOfArrays"
+// returns a single array containing the
+// elements of the nested arrays.
+function joinArrayOfArrays(arr) {
+  // your code here
+  return arr.reduce( (a,b) => {
+    return a.concat(b);
+  })
+}
+
+// Write a function called "getProductOfAllElementsAtProperty".
+// Given an object and a key, "getProductOfAllElementsAtProperty"
+// returns the product of all the elements in the array located at the given key.
+function getProductOfAllElementsAtProperty(obj, key) {
+  // your code here
+ if( !Array.isArray( obj[key]) || obj[key].length === 0 ) {
+   return 0;
+ }
+ return obj[key].reduce( ( a,b ) => {
+   return a * b;
+ })
+}
+
+// Write a function called "sumDigits".
+// Given a number, "sumDigits" returns the sum of all its digits.
+// If the number is negative, the first digit should count as negative.
+function sumDigits(num) {
+  // your code here
+  num = num.toString().split('');
+  for ( var x = num.length - 1; x >= 0; x -- ) {
+    if ( num[x] === '-' ) {
+      num[x + 1] = - num[x + 1];
+      num.splice(num[x], 1);
+    }
+  }
+ return num.map(num => Number(num)).reduce( ( a,b ) => {
+    return a + b;
+  });
+}
+
+// Write a function called "getSumOfAllElementsAtProperty".
+// Given an object and a key, "getSumOfAllElementsAtProperty"
+// returns the sum of all the elements in the array
+// located at the given key.
+function getSumOfAllElementsAtProperty(obj, key) {
+  // your code here
+  if( !Array.isArray( obj[key] ) || obj[key].length === 0 ) {
+    return 0;
+  }
+  return obj[key].reduce( ( a,b ) => {
+    return a + b;
+  })
+}
+
+// Write a function called "findShortestWordAmongMixedElements".
+// Given an array, "findShortestWordAmongMixedElements" returns
+// the shortest string within the given array.
+function findShortestWordAmongMixedElements(arr) {
+  // your code here
+  if( arr.length === 0 ) {
+    return '';
+  }
+  let shortest = '';
+  arr.forEach( e => {
+    if ( shortest.length === 0 && typeof e === 'string' ) {
+      shortest = e;
+    } else if ( e.length < shortest.length ) {
+      shortest = e;
+    }
+  })
+  return shortest;
+}
+
+// Write a function called "findSmallestNumberAmongMixedElements".
+// Given an array of mixed elements, "findSmallestNumberAmongMixedElements"
+// returns the smallest number within the given array.
+function findSmallestNumberAmongMixedElements(arr) {
+  // your code here
+  if ( arr.length === 0 ) {
+    return 0;
+  }
+  let smallest = 0;
+  arr.forEach( e => {
+    if( typeof e === 'number' ) {
+      if( smallest === 0 ) {
+        smallest = e;
+      } else if ( e < smallest ) {
+        smallest = e;
+      }
+    }
+  });
+  return smallest;
+}
+
+// Write a function called "getLongestWordOfMixedElements".
+// Given an array of mixed types, "getLongestWordOfMixedElements"
+// returns the longest string in the given array.
+function getLongestWordOfMixedElements(arr) {
+  // your code here
+  if ( arr.length === 0 ) {
+    return '';
+  }
+  let longest = '';
+  arr.map( e => {
+    if ( typeof e === 'string' ) {
+      if ( longest.length === 0 ) {
+        longest = e;
+      } else if ( e.length > longest ) {
+        longest = e;
+      }
+    }
+  })
+  return longest;
+}
+
+// Write a function called "getLargestNumberAmongMixedElements".
+// Given any array, "getLargestNumberAmongMixedElements" returns
+// the largest number in the given array.
+function getLargestNumberAmongMixedElements(arr) {
+  // your code here
+  if ( arr.length === 0 ) {
+    return 0;
+  }
+  let largest;
+  arr.forEach( e => {
+    if ( !largest && typeof e === 'number' ) {
+      largest = e;
+    }
+    if ( typeof e === 'number' && largest < e ) {
+      largest = e;
+    }
+  })
+  return !largest ? 0: largest;
+}
+
+// Write a function called "computeSummationToN".
+// Given a number, "computeSummationToN" returns
+// the sum of sequential numbers leading up
+// to the given number, beginning at 0.
+function computeSummationToN(n) {
+  // your code here
+  if ( n === 0 ) {
+    return 0;
+  }
+  let sumArr = [];
+  while ( n ) {
+    sumArr.push( n );
+    n --;
+  }
+  return sumArr.reduce( ( a, b ) => a + b);
+}
+
+// Write a function called "convertScoreToGrade".
+// Given a score, "convertScoreToGrade" returns a
+// string representing the letter grade
+// corresponding to the given score.
+function convertScoreToGrade(score) {
+  // your code here
+  if ( score > 100 || score < 0 ) {
+    return 'INVALID SCORE';
+  } else if ( score >= 90 ) {
+    return 'A'
+  } else if ( score >=80 ) {
+    return 'B';
+  } else if ( score >= 70 ) {
+    return 'C';
+  } else if (score >= 60 ) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
+
+// Write a function called "convertScoreToGradeWithPlusAndMinus".
+// Given a score, "convertScoreToGradeWithPlusAndMinus" returns a
+// string representing the letter grade corresponding to the given score.
+
+function convertScoreToGradeWithPlusAndMinus(score) {
+  // your code here
+  if ( score > 100 || score < 0 ) {
+    return 'INVALID SCORE';
+  } else if ( score >= 90 ) {
+    if ( score <= 92 ) {
+      return 'A-';
+    } else if ( score >= 98 ) {
+      return 'A+';
+    } else {
+      return 'A';
+    }
+  } else if ( score >=80 ) {
+    if ( score <= 82 ) {
+      return 'B-';
+    } else if ( score >= 88 ) {
+      return 'B+';
+    } else {
+      return 'B';
+    }
+  } else if ( score >= 70 ) {
+    if ( score <= 72 ) {
+      return 'C-';
+    } else if ( score >= 78 ) {
+      return 'C+';
+    } else {
+      return 'C';
+    }
+  } else if (score >= 60 ) {
+    if ( score <= 62 ) {
+      return 'D-';
+    } else if ( score >= 68 ) {
+      return 'D+';
+    } else {
+      return 'D';
+    }
+  } else {
+    return 'F';
+  }
+}
+
+// Write a function called "computeFactorialOfN".
+// Given a natural number (a whole number greater than 0),
+// "computeFactorialOfN" returns its factorial.
+// function computeFactorialOfN(n) {
+//   // your code here
+//   if ( n === 0 ) {
+//     return 0;
+//   }
+//   let sumArr = [];
+//   while ( n ) {
+//     sumArr.push( n );
+//     n --;
+//   }
+//   return sumArr.reduce( ( a, b ) => a * b);
+// }
+function computeFactorialOfN(n) {
+  // your code here
+  if ( n === 0 ) {
+    return 1;
+  }
+  return n * computeFactorialOfN(n - 1);
+}
+
+// Write a function called "repeatString".
+// Given a string and a number, "repeatString"
+// returns the given string repeated the given number of times.
+function repeatString(string, num) {
+  // your code here
+  return string.repeat(num);
+}
+
+// Write a function called "getLongestOfThreeWords".
+// Given 3 words, "getLongestOfThreeWords" returns the longest of three words.
+// Notes:
+// * If there is a tie, it should return the first word in the tie.
+function getLongestOfThreeWords(word1, word2, word3) {
+  // your code here
+  let longest = [word1, word2, word3];
+  longest = longest.sort( ( a, b ) => {
+    return b.length - a.length;
+  })[0];
+  return longest;
+}
+
+// Write a function called "findShortestOfThreeWords".
+// Given 3 strings, "findShortestOfThreeWords" returns
+// the shortest of the given strings.
+function findShortestOfThreeWords(word1, word2, word3) {
+  // your code here
+  let shortest = [word1, word2, word3];
+  shortest = shortest.sort( ( a, b ) => {
+    return a.length - b.length;
+  })[0];
+  return shortest
+}
+
+// Write a function called "computeCompoundInterest".
+// Given a principal, an interest rate, a compounding
+// frequency, and a time (in years), "computeCompoundInterest"
+// returns the amount of compound interest generated.
+function computeCompoundInterest(principal, interestRate, compoundingFrequency, timeInYears) {
+  // your code here
+  return principal * Math.pow( ( 1 + ( interestRate/4 ) ),( compoundingFrequency * timeInYears ) ) - principal ;
+}
+
+// Write a function called "modulo".
+// Given 2 numbers, "modulo" returns the
+// remainder after dividing num1 by num2.
+// It should behave as described in the
+// canonical documentation (MDN) for the JavaScript remainder
+function modulo(num1, num2) {
+  // your code here
+  let q = parseInt(num1 / num2);
+  let p = q * num2;
+  return num1 - p;
+}
+
+// Write a function called "multiply".
+// Given 2 numbers, "multiply" returns their product.
+// * It should not use the multiply operator (*).\
+function multiply(num1, num2) {
+  // your code here
+  let product = 0;
+  if ( num2 < 0 ) {
+      for ( var x = 0; x > num2; x-- ) {
+      product -= num1;
+    }
+    return product;
+  }
+      for ( var y = 0; y < num2; y++ ) {
+      product += num1;
+    }
+  return product;
+}
+
+// Write a function called "isOddWithoutModulo".
+// Given a number, "isOddWithoutModulo" returns
+// whether the passed in number is odd.
+function isOddWithoutModulo(num) {
+  // your code here
+  console.log( num & 1 );
+  return (num & 1) ? true : false;
+}
+
+function isEvenWithoutModulo(num) {
+  // your code here
+  return ( num & 1 ) ? false : true;
+}
+
+// Write a function called "multiplyBetween".
+// Given 2 integers, "multiplyBetween" returns
+// the product between the two given integers,
+// beginning at num1, and excluding num2.
+// Notes:
+// * The product between 1 and 4 is 1 * 2 * 3 = 6.
+// * If num2 is not greater than num1, it should return 0.
+function multiplyBetween(num1, num2) {
+  // your code here
+  if ( num2 <= num1 ) {
+    return 0;
+  }
+  let productArr = [];
+  for ( var x = num1; x < num2; x ++ ) {
+    productArr.push( x );
+  }
+  return productArr.reduce( ( a, b ) => {
+    return a * b;
+  })
+}
+
+// Write a function called "computeSumBetween".
+// Given 2 integers, "computeSumBetween" returns
+// the sum between the two given integers,
+// beginning at num1, and excluding num2.
+// Notes:
+// * The sum between 1 and 4 is 1 + 2 + 3 = 6.
+// * If num2 is not greater than num1, it should return 0.
+function computeSumBetween(num1, num2) {
+  // your code here
+  if( num1 >= num2 ) {
+    return 0;
+  }
+  let sumArr = [];
+  for ( var x = num1; x < num2; x++ ) {
+    sumArr.push(x);
+  }
+  return sumArr.reduce( ( a, b) => {
+    return a + b;
+  });
+}
