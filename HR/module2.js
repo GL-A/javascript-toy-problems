@@ -40,3 +40,31 @@ var actual = 'broken'.split('');
 // var expected = [1, 1, 2, 3, 5, 8, 13];
 // var actual = [1, 1, 2, 3, 5, 8, 43, 5];
 assertArraysEqual(actual, expected, 'assertArrayTest');
+
+// Write an "assertObjectsEqual" function from scratch.
+// Assume that the objects in question contain only scalar
+// values (i.e., simple values like strings or numbers).
+// It is OK to use JSON.stringify().
+// Note: The examples below represent different use
+// cases for the same test. In practice, you should
+// never have multiple tests with the same name.
+function assertObjectsEqual(actual, expected, testName) {
+  // your code here
+  var check = 0;
+  if ( Object.keys(actual).length ===  Object.keys(expected).length) {
+    for ( var key in actual ) {
+      if( actual[key] === expected[key] ) {
+        check ++;
+      }
+    }
+    if( Object.keys(actual).length === check ) {
+          console.log('passed');
+    }
+  }
+  console.log('FAILED ' + testName + ' expected: ' + JSON.stringify(expected) + ' instead got ' + JSON.stringify(actual));
+}
+// var expected = {foo: 5, bar: 6};
+// var actual = {foo: 5, bar: 6}
+var expected = {foo: 6, bar: 5};
+var actual = {foo: 5, bar: 6}
+assertObjectsEqual(actual, expected, 'detects that two objects are equal');
