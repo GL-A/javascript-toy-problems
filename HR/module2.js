@@ -303,3 +303,11 @@ function isIsogram(text) {
   return (newText.size === text.length);
 }
 isIsogram('pablescor');
+
+// var sum = [1, 2, 3].reduce(add, 0);
+//
+// function add(a, b) {
+//     return a + b;
+// }
+//
+// console.log(sum);
